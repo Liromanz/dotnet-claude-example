@@ -4,8 +4,6 @@
 (`Dictionaries` и `Analytics`), общающихся через имитацию единого Kafka-топика, и
 React 18+/Vite/TanStack Router фронтенд в стиле редизайна 10 прототипа "Data Tracker".
 
-Подробности архитектуры и решений — в `/Users/safika/.claude/plans/lively-noodling-yeti.md`.
-
 ## Структура
 
 ```
