@@ -1,0 +1,96 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 32px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebarTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.labelRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.label {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.required {
+  color: var(--danger);
+}
+
+.counter {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.input,
+.textarea,
+.bodyTextarea {
+  width: 100%;
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 14px;
+  padding: 10px 12px;
+}
+
+.input {
+  height: 40px;
+}
+
+.textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.bodyTextarea {
+  resize: vertical;
+  min-height: 220px;
+  font-family: inherit;
+}
+
+.input::placeholder,
+.textarea::placeholder,
+.bodyTextarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+.input:focus,
+.textarea:focus,
+.bodyTextarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.error {
+  margin-top: 16px;
+  color: var(--danger);
+  font-size: 13px;
+}

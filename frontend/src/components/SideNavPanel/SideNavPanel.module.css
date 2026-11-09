@@ -1,0 +1,50 @@
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.item,
+.itemActive {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+}
+
+.item {
+  color: var(--text-secondary);
+}
+
+.item:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}
+
+.itemActive {
+  background: var(--accent);
+  color: var(--accent-text);
+  font-weight: 500;
+}
+
+.arrow {
+  flex-shrink: 0;
+}

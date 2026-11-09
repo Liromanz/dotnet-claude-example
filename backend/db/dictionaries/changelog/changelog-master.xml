@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.26.xsd">
+
+    <!--
+        Schema for the Dictionaries service. EF Core migrations are disabled on purpose —
+        this changelog is the only thing allowed to create or alter tables; EF Core just
+        maps onto what's here (see Dictionaries.Infrastructure/Persistence/Configurations).
+    -->
+    <changeSet id="001-create-themes" author="metricboard">
+        <createTable tableName="themes">
+            <column name="id" type="TEXT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="author" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="editor" type="TEXT"/>
+            <column name="created_at_utc" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_at_utc" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createIndex indexName="ix_themes_name" tableName="themes">
+            <column name="name"/>
+        </createIndex>
+        <createIndex indexName="ix_themes_status" tableName="themes">
+            <column name="status"/>
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,24 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.approved {
+  background: var(--badge-approved-bg);
+  color: var(--badge-approved-text);
+}
+
+.draft {
+  background: var(--badge-draft-bg);
+  color: var(--badge-draft-text);
+}
+
+.neutral {
+  background: var(--surface-hover);
+  color: var(--text-secondary);
+}

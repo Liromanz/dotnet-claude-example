@@ -1,0 +1,22 @@
+# .NET
+backend/**/bin/
+backend/**/obj/
+
+# SQLite data files (recreated by `liquibase update`, never committed)
+backend/db/**/*.db
+backend/db/**/*.db-shm
+backend/db/**/*.db-wal
+
+# Liquibase
+backend/db/**/*.log
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/*.local
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store

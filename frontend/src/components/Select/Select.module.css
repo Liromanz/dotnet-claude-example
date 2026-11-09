@@ -1,0 +1,115 @@
+.root {
+  position: relative;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  text-align: left;
+}
+
+.trigger:hover {
+  border-color: var(--text-tertiary);
+}
+
+.value {
+  color: var(--text-primary);
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.placeholder {
+  composes: value;
+  color: var(--text-tertiary);
+}
+
+.chevron {
+  flex-shrink: 0;
+  color: var(--text-tertiary);
+}
+
+.panel {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-raised);
+  overflow: hidden;
+}
+
+.searchRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.searchIcon {
+  flex-shrink: 0;
+  color: var(--text-tertiary);
+}
+
+.searchInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-size: 13px;
+}
+
+.options {
+  max-height: 220px;
+  overflow-y: auto;
+  padding: 4px;
+}
+
+.option,
+.optionActive,
+.clearOption {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  text-align: left;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.option:hover,
+.clearOption:hover {
+  background: var(--surface-hover);
+}
+
+.optionActive {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+.clearOption {
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+}
+
+.empty {
+  padding: 10px;
+  color: var(--text-tertiary);
+  font-size: 13px;
+  text-align: center;
+}

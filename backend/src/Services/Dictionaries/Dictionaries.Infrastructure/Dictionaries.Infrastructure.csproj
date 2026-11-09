@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dictionaries.Application\Dictionaries.Application.csproj" />
+    <ProjectReference Include="..\Dictionaries.Domain\Dictionaries.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Common\MetricBoard.Common.Domain\MetricBoard.Common.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Common\MetricBoard.Common.Application\MetricBoard.Common.Application.csproj" />
+    <ProjectReference Include="..\..\..\Common\MetricBoard.Common.Infrastructure\MetricBoard.Common.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.14" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

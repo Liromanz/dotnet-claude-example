@@ -1,0 +1,52 @@
+/*
+  Palette lifted from the "Data Tracker" redesign10 screenshots: a single fixed dark-navy
+  theme (the reference has no light mode), blue accent, green/yellow status badges.
+*/
+:root {
+  --bg: #171a30;
+  --surface: #1f2342;
+  --surface-raised: #242848;
+  --surface-hover: #292e54;
+
+  --border: #2b2f52;
+  --border-subtle: #242848;
+
+  --accent: #3e74f0;
+  --accent-hover: #2f5fd6;
+  --accent-text: #ffffff;
+
+  --text-primary: #eef1fb;
+  --text-secondary: #8b90b3;
+  --text-tertiary: #6b7094;
+
+  --tag-bg: #2b3057;
+  --tag-text: #a8b0db;
+
+  --badge-approved-bg: rgba(74, 222, 128, 0.15);
+  --badge-approved-text: #4ade80;
+  --badge-draft-bg: rgba(250, 204, 21, 0.15);
+  --badge-draft-text: #facc15;
+
+  --danger: #f87171;
+  --danger-bg: rgba(248, 113, 113, 0.12);
+
+  --input-bg: #1b1e3a;
+  --shadow-raised: 0 20px 45px rgba(5, 6, 16, 0.5);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  color-scheme: dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+}

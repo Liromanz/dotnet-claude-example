@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.26.xsd">
+
+    <!--
+        Schema for the Analytics service. EF Core migrations are disabled on purpose — this
+        changelog is the only thing allowed to create or alter tables (see
+        Analytics.Infrastructure/Persistence/Configurations).
+
+        theme_refs is not a source of truth: it's a local cache populated exclusively by
+        consuming the "themes" topic from Dictionaries via Broker.Api (see
+        ThemeIntegrationEventHandlers). Dropping and re-creating it loses nothing that a
+        topic replay couldn't rebuild.
+    -->
+    <changeSet id="001-create-articles" author="metricboard">
+        <createTable tableName="articles">
+            <column name="id" type="TEXT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="title" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="subtitle" type="TEXT"/>
+            <column name="body" type="TEXT"/>
+            <column name="author" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="periodicity" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="theme_ids_json" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="view_count" type="INTEGER" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="published_at_utc" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createIndex indexName="ix_articles_published_at_utc" tableName="articles">
+            <column name="published_at_utc"/>
+        </createIndex>
+        <createIndex indexName="ix_articles_author" tableName="articles">
+            <column name="author"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="002-create-theme-refs" author="metricboard">
+        <createTable tableName="theme_refs">
+            <column name="id" type="TEXT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_at_utc" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
